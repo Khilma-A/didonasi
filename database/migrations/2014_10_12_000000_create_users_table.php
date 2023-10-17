@@ -11,12 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // migration berfungsi untuk membantu kita membuat struktur database secara utuh
+        // unique agar kolom tersebut tidak bisa di isi data yang sama
+        // nullable agar kolom tersebut bisa di idi data kosong
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('fullname');
+            $table->string('avartar')->nullable();
+            $table->string('phone_number');
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
