@@ -14,5 +14,5 @@ class CampaignDonation extends Model
         'user_id',
         'value',
         'status'
-    ]
+    ];
 }
